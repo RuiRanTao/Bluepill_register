@@ -1,0 +1,5 @@
+sys.c:5:6:MY_NVIC_SetVectorTable	16	static
+sys.c:10:6:MY_NVIC_PriorityGroupConfig	24	static
+sys.c:22:6:MY_NVIC_Init	32	static
+sys.c:33:6:MYRCC_DeInit	8	static
+sys.c:54:6:Stm32_Clock_Init	24	static

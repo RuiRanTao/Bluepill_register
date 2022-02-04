@@ -1,0 +1,2 @@
+stm32f10x_gpio.c:3:6:GPIO_SetBits	16	static
+stm32f10x_gpio.c:7:6:GPIO_ResetBits	16	static
