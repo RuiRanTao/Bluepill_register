@@ -31,7 +31,7 @@
 u8 t;
 u8 len;
 u16 times=0;
-u8 string[10]="received: ";
+u8 string[10]="Received: ";
 
 int main(void)
 {
