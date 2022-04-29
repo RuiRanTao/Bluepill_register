@@ -53,7 +53,7 @@ int main(void)
 			USART1_SendData(USART1_REC, USART_REC_LEN);
 			USART1_STA &= ~0x8000;
 			times++;
-			printf("%d\r\n\r\n\r\n",times);
+			printf("	个%d\r\n\r\n\r\n",times);
 		}
 
 	   if(KEY_Scan(0)==2)
