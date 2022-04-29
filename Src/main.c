@@ -51,6 +51,10 @@ int main(void)
 			USART1_SendData(USART1_REC, USART_REC_LEN);
 			USART1_STA &= ~0x8000;
 		}
+
+	   if(KEY_Scan(0)==2)
+			GPIO_SetBits(GPIOA,GPIO_Pin_1);		//GPIOA1置低电平
+
 //	   delay_ms(1);
 	}
 }

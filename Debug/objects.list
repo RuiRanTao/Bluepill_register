@@ -1,4 +1,5 @@
 "./Src/delay.o"
+"./Src/key.o"
 "./Src/led.o"
 "./Src/main.o"
 "./Src/stm32f10x_gpio.o"
