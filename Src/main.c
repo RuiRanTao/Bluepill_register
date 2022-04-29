@@ -23,6 +23,8 @@
 #include "delay.h"
 #include "usart.h"
 #include "sys.h"
+#include "key.h"
+#include "stdio.h"
 
 #if !defined(__SOFT_FP__) && defined(__ARM_FP)
   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
@@ -39,7 +41,7 @@ int main(void)
 	delay_init(72);	     //延时初始化
 	LED_init();
 	USART1_Init(72,115200);	 //串口初始化为9600
-
+	KEY_Init();
     /* Loop forever */
 	for(;;)
 	{
@@ -50,10 +52,12 @@ int main(void)
 			USART1_SendData(string, 10);
 			USART1_SendData(USART1_REC, USART_REC_LEN);
 			USART1_STA &= ~0x8000;
+			times++;
+			printf("%d\r\n\r\n\r\n",times);
 		}
 
 	   if(KEY_Scan(0)==2)
-			GPIO_SetBits(GPIOA,GPIO_Pin_1);		//GPIOA1置低电平
+		   GPIO_TogglePin(GPIOA,GPIO_Pin_1);		//GPIOA1置低电平
 
 //	   delay_ms(1);
 	}

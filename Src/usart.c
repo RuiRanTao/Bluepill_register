@@ -11,6 +11,18 @@ u8 USART1_REC[USART_REC_LEN];
 //USART1_STA[13:0] 标识有效的数据接收长度
 u16 USART1_STA = 0;
 
+#ifdef __GNUC__
+
+#define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
+
+PUTCHAR_PROTOTYPE
+{
+    //注意下面第一个参数是&husart1，因为cubemx配置了串�???1自动生成�???
+	USART1_SendData((uint8_t*)&ch, 1);
+    return ch;
+}
+#endif
+
 void USART1_IRQHandler(void) {
 	u8 buf = 0;
 	if (USART1->SR & 0x20) {	//当接收中断产生

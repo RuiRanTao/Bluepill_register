@@ -69,9 +69,9 @@ typedef enum IRQn
 
 } IRQn_Type; 
 
+#define U32 unsigned int
 #define u16 unsigned short
 #define u8 unsigned char
-#define u32 unsigned int
 	
 #ifdef __cplusplus
   #define     __I     volatile                /*!< defines 'read only' permissions      */
@@ -98,7 +98,7 @@ typedef enum IRQn
 
 typedef unsigned short uint16_t;
 typedef unsigned char uint8_t;
-//typedef unsigned int uint32_t;
+typedef unsigned int u32;
 
 /** 
   * @brief Universal Synchronous Asynchronous Receiver Transmitter
